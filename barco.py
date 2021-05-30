@@ -1,18 +1,18 @@
+from random import randint  
 
-tablero = []
-barco_uno = 3
-barco_dos = 3
-barco_tres = 3
-
-def crear_tablero():
-    for x in range(9):
-        tablero.append(["O"] * 9)
-        
-def imprimir_tablero():
-    print("Batalla naval")
-    print("--------------")
-    for i in tablero:
-        print(" ".join(i))
-        
+class barco():
+    def __init__(self, orientacion, tamano ):
+        self.tamano = tamano
+    
+    def orientacion_barco(self, orientacion):    
+        if orientacion == "horizontal" or orientacion == "vertical":
+            self.orientacion = orientacion
+        else:
+            print("La posición del barco debe ser horizontal o vertical")
+            
+    def ubicacion_barcos(self, tamano, orientacion):
+        if orientacion == "horizontal":
+            if tamano <= #Tablero.tamano:
+                #Tablero.append(barco())               
         
 
