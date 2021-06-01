@@ -1,18 +1,28 @@
 from random import randint  
+from battleship import Orientacion, Tablero
 
 class barco():
     def __init__(self, orientacion, tamano ):
+        self.orientacion = orientacion
         self.tamano = tamano
     
-    def orientacion_barco(self, orientacion):    
-        if orientacion == "horizontal" or orientacion == "vertical":
+    def orientacion_barco(self, orientacion: int) -> bool:    
+        if orientacion == Orientacion.HORIZONTAL or Orientacion.VERTICAL:
             self.orientacion = orientacion
-        else:
-            print("La posición del barco debe ser horizontal o vertical")
+            return True
+        return False
+    
+    
+    def impacto_barco(self):
+        for i in range(self._tablero):
+            if Tablero.Ubicar_barco == "*":
+                return True
+            elif Tablero.Ubicar_barco == "0":
+                return False
             
-    def ubicacion_barcos(self, tamano, orientacion):
-        if orientacion == "horizontal":
-            if tamano <= #Tablero.tamano:
-                #Tablero.append(barco())               
-        
-
+            
+    def hundir_barco(self, tamano):
+        for i in range(self._tablero):
+            if tamano == Tablero.Ubicar_barco:
+                return True
+            return False
