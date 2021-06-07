@@ -1,5 +1,6 @@
 
 from battleship.Orientacion import Orientacion
+from battleship import Impacto
 
 class Tablero():
     
@@ -19,3 +20,23 @@ class Tablero():
                 self._tablero[x + i][y] = barco
             elif barco.orientacion == Orientacion.VERTICAL:
                 self._tablero[x][y + i]
+                
+                
+    def impacto_barco(self, barco: Barco):
+        for i in range(barco.tamano):
+            if barco.impacto == Impacto.POSITIVO:
+                barco.tamano = barco.tamano -1
+            elif barco.impacto == Impacto.NEGATIVO:
+                barco.tamano = barco.tamano -0
+                
+        return barco.tamano
+    
+    def hundir_barco(self, barco: Barco) -> bool:
+        for i in range(barco.tamano):
+            if barco.tamano == Impacto.POSITIVO and barco.tamano == 1:
+                return True
+        return False
+                
+                
+                 
+                
